@@ -5,13 +5,13 @@ const Schema = mongoose.Schema
 const ProductSchema = Schema(
 	{
 		name: String,
-		size: Number,
-		unitaryProce: Number,
+		size: String,
+		unitaryPrice: Number,
 		imgUrl: String,
-		descrption: String,
+		description: String,
 	},
 	{
-		timestamp: true,
+		timestamps: true
 	}
 )
 

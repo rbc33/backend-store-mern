@@ -1,9 +1,8 @@
 import express from 'express'
+import { addProduct } from '../handlers/productHandler.js'
 
 const api = express.Router()
 
-api.post('/products', (req, res) => {
-	res.status(201).send({ success: true })
-})
+api.post('/products', addProduct)
 
 export default api
