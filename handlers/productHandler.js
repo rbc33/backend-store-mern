@@ -1,3 +1,4 @@
+import product from '../models/product.js'
 import Product from '../models/product.js'
 
 export const addProduct = async (req, res) => {
@@ -20,4 +21,9 @@ export const addProduct = async (req, res) => {
 	} catch (e) {
 		res.status(500).send({ message: e.message })
 	}
+}
+// TODO: Add pagination
+export const getProducts = async (rew, res) => {
+	const products = await Product.find().lean().exec()
+	res.status(200).send(products)
 }
